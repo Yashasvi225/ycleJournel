@@ -1,0 +1,315 @@
+@import "tailwindcss";
+
+/* ================================
+   CYCLEJOURNAL THEME
+================================ */
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+
+  --bg: #fffdf7;
+  --surface: #ffffff;
+  --surface-soft: #f7f3eb;
+
+  --text: #172033;
+  --text-muted: #64748b;
+
+  --border: #e2e8f0;
+
+  --sidebar: #080808;
+  --sidebar-text: #cbd5e1;
+
+  --sage: #829b7b;
+  --teal: #0f766e;
+  --lavender: #c4b5fd;
+  --coral: #fb7185;
+  --navy: #172554;
+
+  --shadow: 0 10px 30px rgba(23, 37, 84, 0.07);
+}
+
+/* ================================
+   DARK THEME
+================================ */
+
+html.dark {
+  --bg: #111315;
+  --surface: #1a1d20;
+  --surface-soft: #22262a;
+
+  --text: #f8fafc;
+  --text-muted: #aeb8c5;
+
+  --border: #343a40;
+
+  --sidebar: #050505;
+  --sidebar-text: #d1d5db;
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  color-scheme: dark;
+}
+
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  transition: all 0.2s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: inherit;
+}
+
+/* ================================
+   APPLICATION
+================================ */
+
+.app-shell {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.mobile-header {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.app-sidebar {
+  background: var(--sidebar);
+}
+
+/* ================================
+   CARDS
+================================ */
+
+.card,
+.privacy-card,
+.settings-card {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.card {
+  padding: 1.5rem;
+}
+
+.settings-card {
+  padding: 1.75rem;
+}
+
+/* ================================
+   TEXT
+================================ */
+
+.muted-text {
+  color: var(--text-muted);
+}
+
+.eyebrow {
+  color: var(--sage);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ================================
+   FORMS
+================================ */
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+
+  background: var(--surface);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+}
+
+.form-control:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.8rem 1.1rem;
+
+  border: 0;
+  border-radius: 0.8rem;
+
+  background: var(--navy);
+  color: white;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.94;
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+/* ================================
+   THEME SELECTOR
+================================ */
+
+.theme-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.theme-option {
+  padding: 1rem;
+
+  background: var(--surface-soft);
+  color: var(--text);
+
+  border: 2px solid transparent;
+  border-radius: 1rem;
+
+  cursor: pointer;
+  text-align: left;
+}
+
+.theme-option:hover {
+  border-color: var(--border);
+}
+
+.theme-option.active {
+  border-color: var(--teal);
+}
+
+/* ================================
+   MESSAGES
+================================ */
+
+.success-message {
+  padding: 0.8rem 1rem;
+  margin-top: 1rem;
+
+  background: rgba(15, 118, 110, 0.1);
+  color: var(--teal);
+
+  border-radius: 0.8rem;
+}
+
+.error-message {
+  padding: 0.8rem 1rem;
+  margin-top: 1rem;
+
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+
+  border-radius: 0.8rem;
+}
+
+/* ================================
+   ACCESSIBILITY
+================================ */
+
+.focus-ring:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #a8b7a0;
+  outline-offset: 2px;
+}
+
+/* ================================
+   DECORATION
+================================ */
+
+.soft-grid {
+  background-image:
+    radial-gradient(#a8b7a055 1px, transparent 1px);
+
+  background-size: 24px 24px;
+}
+
+html.dark .soft-grid {
+  background-image:
+    radial-gradient(rgba(168, 183, 160, 0.15) 1px, transparent 1px);
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 640px) {
+  .theme-options {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .privacy-card,
+  .settings-card {
+    border-radius: 1rem;
+  }
+}
