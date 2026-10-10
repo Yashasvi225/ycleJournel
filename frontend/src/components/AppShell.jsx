@@ -93,7 +93,7 @@ export default function AppShell({ children }) {
         <Logo light />
 
         <nav
-          className="mt-9 space-y-1"
+          className="app-navigation mt-9 space-y-1"
           aria-label="Main navigation"
         >
           {items.map(([label, path, Icon]) => (
@@ -121,7 +121,7 @@ export default function AppShell({ children }) {
         <button
           type="button"
           onClick={logout}
-          className="absolute bottom-6 left-5 right-5 flex items-center gap-2 rounded-xl bg-white/10 px-4 py-3 text-sm font-bold text-white hover:bg-white/20"
+          className="app-logout absolute bottom-6 left-5 right-5 flex items-center gap-2 rounded-xl bg-white/10 px-4 py-3 text-sm font-bold text-white hover:bg-white/20"
         >
           <LogOut size={17} aria-hidden="true" />
           Log out
@@ -130,7 +130,7 @@ export default function AppShell({ children }) {
 
       {/* PAGE CONTENT */}
 
-      <main className="p-5 md:ml-64 md:p-9 lg:p-12">
+      <main className="app-main p-5 md:ml-64 md:p-9 lg:p-12">
         {children}
       </main>
     </div>
